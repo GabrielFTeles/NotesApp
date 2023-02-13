@@ -1,0 +1,41 @@
+.new-note {
+  padding-top: 3.5rem;
+
+  display: flex;
+  flex-direction: column;
+}
+
+.note-inputs {
+  width: 100%;
+
+  color: white;
+
+  background: transparent;
+
+  outline: none;
+  border: none;
+
+  resize: none;
+}
+
+#note-title {
+  height: 7.2rem;
+
+  font-size: 3rem;
+}
+
+#note-title::placeholder {
+  color: #9A9A9A;
+}
+
+#note-title::-webkit-scrollbar {
+  width: 0;
+}
+
+#note-description {
+  font-size: 2.2rem;
+
+  margin-top: 3rem;
+
+  height: 40rem;
+}

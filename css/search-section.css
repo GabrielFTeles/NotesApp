@@ -1,0 +1,32 @@
+.search-container {
+  width: 100%;
+
+  display: flex;
+  justify-content: flex-end;
+}
+
+#search-input {
+  width: 85%;
+  height: 4.5rem;
+
+  padding-inline: 2rem;
+
+  background: #3d3d3d;
+
+  font-size: 1.6rem;
+  color: #eeeeee;
+
+  box-shadow: 0 5px 15px rgba(27, 27, 30);
+
+  border-radius: 10px;
+  border: 3px solid #2b2b2b;
+
+  outline: none;
+
+  margin-block: 3.5rem;
+}
+
+#search-input::placeholder {
+  font-weight: 300;
+  color: #CCCCCC;
+}

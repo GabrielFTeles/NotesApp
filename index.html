@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://kit.fontawesome.com/67aa33abf6.js" crossorigin="anonymous"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./css/main.css">
+  <script src="./js/main.js" type="module" defer></script>
+  <title>Notes App</title>
+</head>
+<body>
+  <main>
+    <section class="notes-section active">
+      <div class="header-container">
+        <h1>Notes App</h1>
+    
+        <div class="flex-2gap">
+          <button class="default-button" id="search-button"><i class="fa-solid fa-magnifying-glass"></i></button>
+          <button class="default-button" id="info-button"><i class="fa-solid fa-circle-info"></i></button>
+        </div>
+      </div>
+
+      <ul class="notes-list" id="notes-list">
+      </ul>
+
+      <button id="add-note"><i class="fa-solid fa-plus"></i></button>
+
+      <div data-modal-background="" class="modal-container" id="info-modal">
+        <div data-modal="" class="info-modal">
+          <ul class="info-list">
+            <li>Designed by - Divya Kelaskar</li>
+            <li>Redesigned by - Gabriel Teles</li>
+            <li>Icons - FontAwesome</li>
+            <li>Font - Nunito</li>
+          </ul>
+  
+          <h3>Made by Gabriel Teles 💜</h3>
+        </div>
+      </div>
+    </section>
+
+    <section class="new-note-section">
+      <div class="container">
+        <div class="buttons-container flex-2gap">
+            <button class="default-button" id="save-note"><i class="fa-solid fa-floppy-disk"></i></button>
+        </div>
+
+        <div class="new-note">
+          <textarea name="note-title" id="note-title" class="note-inputs" placeholder="Title"></textarea>
+          <span class="error">Please enter a title.</span>
+
+          <textarea name="note-description" id="note-description" class="note-inputs" placeholder="Type something..."></textarea>
+          <span class="error">Please enter a description.</span>
+        </div>
+      </div>
+
+      <div data-modal-background="" class="modal-container" id="save-modal">
+        <div data-modal="" class="confirm-modal">
+          <i class="fa-solid fa-circle-info"></i>
+
+          <h3>Save note ?</h3>
+
+          <div class="modal-buttons">
+            <button class="discard-button" id="discard-save">Discard</button>
+            <button class="confirm-button" id="confirm-save">Save</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="preview-note-section">
+      <div class="container">
+        <div class="buttons-container flex-2gap">
+          <button class="default-button" id="delete-button"><i class="fa-solid fa-trash-can"></i></button>
+
+          <button class="default-button" id="edit-button"><i class="fa-solid fa-pen"></i></button>
+
+          <button class="default-button hidden" id="save-edit"><i class="fa-solid fa-floppy-disk"></i></button>
+        </div>
+
+        <h2 id="preview-title"></h2>
+        <span class="error">Please enter a title.</span>
+
+        <p id="preview-description"></p>
+        <span class="error">Please enter a description.</span>
+      </div>
+
+      <div data-modal-background="" class="modal-container" id="delete-modal">
+        <div data-modal="" class="confirm-modal">
+          <i class="fa-solid fa-circle-info"></i>
+
+          <h3>Are you really sure that you want to delete this note?</h3>
+
+          <div class="modal-buttons">
+            <button class="discard-button" id="discard-delete">No</button>
+            <button class="confirm-button" id="confirm-delete">Confirm</button>
+          </div>
+        </div>
+      </div>
+
+      <div data-modal-background="" class="modal-container" id="edit-modal">
+        <div data-modal="" class="confirm-modal">
+          <i class="fa-solid fa-circle-info"></i>
+
+          <h3>Are you really sure that you want to save your changes on this note?</h3>
+
+          <div class="modal-buttons">
+            <button class="discard-button" id="discard-edit">Discard</button>
+            <button class="confirm-button" id="confirm-edit">Save</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="search-section">
+      <div class="search-container">
+        <input type="text" id="search-input" placeholder="Search by the keyword...">
+      </div>
+
+      <ul class="notes-list" id="search-list">
+      </ul>
+    </section>
+
+    <button class="default-button" id="back-button"><i class="fa-solid fa-angle-left"></i></button>
+  </main>
+</body>
+</html>

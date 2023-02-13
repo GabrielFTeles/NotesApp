@@ -1,0 +1,142 @@
+* {margin: 0; padding: 0; box-sizing: border-box;}
+
+:root {
+  font-size: 62.5%;
+}
+
+body {
+  font-size: 1.6rem;
+  font-family: 'Nunito', sans-serif;
+  color: white;
+
+  padding: 0 2.5rem 3rem;
+
+  background: #1B1B1E;
+}
+
+ul {
+  list-style: none;
+}
+
+button {
+  cursor: pointer;
+
+  border: none;
+}
+
+* {
+  scrollbar-width: auto;
+  scrollbar-color: #434243 #999999;
+}
+
+*::-webkit-scrollbar {
+  width: 14px;
+}
+
+*::-webkit-scrollbar-track {
+  background: #999999;
+}
+
+*::-webkit-scrollbar-thumb {
+  background-color: #434243;
+  border-radius: 8px;
+  border: 0px solid #ffffff;
+}
+
+section {
+  display: none;
+}
+
+section.active {
+  display: block;
+}
+
+.default-button {
+  background: #313131;
+
+  display: grid;
+  place-items: center;
+
+  color: #FFFFFF;
+
+  border-radius: 12px;
+
+  font-size: 1.8rem;
+
+  height: 4.5rem;
+  width: 4.5rem;
+
+  box-shadow: 0 0 4px rgba(0, 0, 0, 0.2);
+}
+
+.notes-list {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.note {
+  padding: 2.5rem 3.5rem;
+
+  cursor: pointer;
+
+  border-radius: 10px;
+
+  word-break: break-word;
+
+  color: #1B1B1E;
+}
+
+.flex-2gap {
+  display: flex;
+  gap: 2rem;
+}
+
+.container {
+  padding-top: 3.4rem;
+}
+
+.discard-button,
+.confirm-button {
+  height: 4rem;
+  width: 11.5rem;
+  
+  border-radius: 5px;
+
+  font-size: 1.6rem;
+  color: #FFFFFF;
+}
+
+.discard-button {
+  background: red;
+}
+
+.confirm-button {
+  background: #1cb30e;
+}
+
+.error {
+  display: none;
+  color: red;
+}
+
+.invalid + .error {
+  display: block;
+}
+
+.buttons-container {
+  width: 100%;
+
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+#back-button {
+  position: absolute;
+  left: 2.5rem; top: 3.4rem;
+}
+
+.hidden {
+  display: none;
+}
