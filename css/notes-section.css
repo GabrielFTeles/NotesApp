@@ -1,23 +1,12 @@
-.header-container {
-  position: fixed;
-  top: 0; left: 0;
+.notes-section {
+  padding-top: 11.4rem;
+}
 
-  width: 100%;
-
-  padding: 3.4rem 2.5rem;
-
-  background: #1B1B1E;
-
-  box-shadow: 0 5px 15px rgba(27, 27, 30);
-
-  display: flex;
+#notes-section-header {
   justify-content: space-between;
   align-items: center;
 }
 
-#notes-list {
-  margin-top: 11.4rem;
-}
 
 #add-note {
   position: fixed;

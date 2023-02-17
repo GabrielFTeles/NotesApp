@@ -1,6 +1,9 @@
 import Note from './note.js';
 
-import { showSection } from './main.js'
+import { 
+  showSection,
+  checkIfSectionIsEmpty 
+} from './main.js'
 
 import { hideActiveModal } from './modals.js';
 
@@ -8,20 +11,22 @@ import {
   titleInput,
   descriptionInput,
   notesSection,
+  searchSection,
   notesListElement,
   searchListElement,
   previewNoteSection,
   previewTitle,
   previewDescription,
   editNoteBtn,
-  saveEditBtn
+  saveEditBtn,
+  searchInput
 } from './elements.js';
 
 const notesList = [];
 
 let previewingNote;
 
-const displayNotes = (...notes) => {
+const displayNote = (...notes) => {
   notes.forEach((note) => {
     note.appendTo(notesListElement);
   });
@@ -35,7 +40,7 @@ const updateNotesID = () => {
 
 const updateDisplayedNotes = () => {
   clearDisplayedNotes(notesListElement);
-  displayNotes(...notesList);
+  displayNote(...notesList);
 }
 
 const clearDisplayedNotes = (element) => {
@@ -67,14 +72,16 @@ const deleteNote = () => {
   saveNotes();
   clearDisplayedNotes(notesListElement);
   restartNoteEddition();
-  displayNotes(...notesList);
+  displayNote(...notesList);
   showSection(notesSection);
 }
 
-const addNewNote = () => {
-  const title = titleInput.value.trim();
-  const description = descriptionInput.value.trim();
+const clearSearchSection = () => {
+  searchInput.value = '';
+  clearDisplayedNotes(searchListElement);
+}
 
+const addNewNote = () => {
   const inputsToCheck = [titleInput, descriptionInput]
 
   for (const input of inputsToCheck) {
@@ -86,6 +93,9 @@ const addNewNote = () => {
     }
   }
 
+  const title = titleInput.value.trim();
+  const description = descriptionInput.value.trim();
+
   const note = new Note(title, description);
 
   titleInput.value = '';
@@ -94,8 +104,7 @@ const addNewNote = () => {
   notesList.push(note);
 
   saveNotes();
-
-  displayNotes(note);
+  displayNote(note);
   hideActiveModal();
   showSection(notesSection);
 }
@@ -154,6 +163,7 @@ const saveNoteEddition = () => {
   notesList[previewingNote.id - 1].description = description;
 
   saveNotes();
+  clearSearchSection();
   restartNoteEddition();
   hideActiveModal();
   updateDisplayedNotes();
@@ -163,6 +173,7 @@ const searchNotes = (searchText) => {
   clearDisplayedNotes(searchListElement);
 
   if (!searchText) {
+    checkIfSectionIsEmpty(searchSection);
     return;
   }
 
@@ -176,6 +187,8 @@ const searchNotes = (searchText) => {
   resultArray.forEach((note) => {
     note.appendTo(searchListElement)
   });
+
+  checkIfSectionIsEmpty(searchSection);
 }
 
 export default function loadNotes() {
@@ -191,7 +204,7 @@ export default function loadNotes() {
     notesList.push(note);
   })
 
-  displayNotes(...notesList);
+  displayNote(...notesList);
 }
 
 export { 
@@ -202,5 +215,6 @@ export {
   editNote,
   searchNotes,
   restartNoteEddition,
-  saveNoteEddition
+  saveNoteEddition,
+  clearSearchSection
 };
