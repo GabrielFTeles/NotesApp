@@ -26,7 +26,15 @@ Users should be able to:
 
 ### Screenshot
 
-![](./screenshot.png) ![](./screenshot2.png) ![](./screenshot3.png)
+![](./screenshot.png) 
+
+### Creating Note
+
+![](./screenshot2.png) 
+
+### Previewing Note
+
+![](./screenshot3.png)
 
 ## Built with
 
