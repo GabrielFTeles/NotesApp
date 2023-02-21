@@ -169,6 +169,12 @@ const saveNoteEddition = () => {
   updateDisplayedNotes();
 }
 
+const createSearchRegexp = (searchText) => {
+  searchText = searchText.replace(/[-[\]{}()*+?.,\\^$|#\s]/g, '\\$&');
+
+  return new RegExp(searchText, 'gi');
+}
+
 const searchNotes = (searchText) => {
   clearDisplayedNotes(searchListElement);
 
@@ -177,7 +183,7 @@ const searchNotes = (searchText) => {
     return;
   }
 
-  const searchRegex = new RegExp(searchText, 'gi');
+  const searchRegex = createSearchRegexp(searchText);
 
   const resultArray = notesList.filter((note) => {
     const { title } = note;

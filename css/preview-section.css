@@ -8,6 +8,11 @@
   word-break: break-word;
 }
 
+#preview-title[contentEditable=true],
+#preview-description[contentEditable=true] {
+  border-bottom: 2px solid white;
+}
+
 #preview-description {
   margin-top: 4rem;
 
@@ -17,4 +22,8 @@
   outline: none;
 
   word-break: break-word;
+}
+
+#preview-description[contentEditable=true] {
+  color: #dddddd;
 }
